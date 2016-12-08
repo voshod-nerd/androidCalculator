@@ -15,15 +15,16 @@
     <LinearLayout android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        <EditText
+        <TextView
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:layout_marginRight="5pt"
             android:id="@+id/etNum1"
             android:layout_width="match_parent"
             android:inputType="numberDecimal">
-        </EditText>
+        </TextView>
     </LinearLayout>
+
 
 
     <LinearLayout
@@ -262,7 +263,23 @@
             android:layout_alignParentStart="true"
             />
     </LinearLayout>
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <Button
+            android:text="About application"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/button_about"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:onClick="sendMessage"
+            />
+    </LinearLayout>
 
 
 </LinearLayout>

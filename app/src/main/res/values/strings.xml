@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MyCalc</string>
+    <string name="about">This is my first Android Application. Sokolov Oleg</string>
 </resources>
