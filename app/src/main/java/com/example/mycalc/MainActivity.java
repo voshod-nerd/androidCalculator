@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
 
@@ -15,7 +14,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Double operand2;
     String typeOperand;
     Double result;
-    boolean operand=false;
+
     Button btnZero;
     Button btnOne;
     Button btnTwo;
@@ -31,6 +30,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button btnSub;
     Button btnDiv;
     Button btnBackspace;
+    Button btnEqual;
+    Button btnClear;
     TextView editTextTablo;
 
 
@@ -40,7 +41,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //setContentView(R.layout.land_acivity_main);
+
+
 
         btnZero= (Button) findViewById(R.id.button_zero);
         btnZero.setOnClickListener(this);
@@ -74,6 +76,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         btnBackspace = (Button) findViewById(R.id.button_deleteletter);
         btnBackspace.setOnClickListener(this);
+
+        btnEqual = (Button) findViewById(R.id.button_equal);
+        btnEqual.setOnClickListener(this);
+
+        btnClear = (Button) findViewById(R.id.button_clear);
+        btnClear.setOnClickListener(this);
+
         editTextTablo = (TextView) findViewById(R.id.etNum1);
     }
 
@@ -92,7 +101,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.button_eight: { editTextTablo.setText(editTextTablo.getText().toString()+"8");  break;}
             case R.id.button_nine: { editTextTablo.setText(editTextTablo.getText().toString()+"9");  break;}
             case R.id.button_equal: {
-
                 operand2=Double.parseDouble(editTextTablo.getText().toString());
 
                 switch (typeOperand) {
@@ -112,10 +120,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 text=text.substring(0,text.length()-1);
                 editTextTablo.setText(text);
                 break;
-
-
             }
-
+            case R.id.button_clear: {editTextTablo.setText("");  operand1=0.0; operand2=0.0; typeOperand="";   break;  }
+            default: {break;}
 
 
         }
